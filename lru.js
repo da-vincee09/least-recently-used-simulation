@@ -230,7 +230,7 @@ async function simulateLRU(refs, frames) {
         if(displayHits < hits) displayHits += increment;
         if(displayMisses < misses) displayMisses += increment;
         totalStreams = displayHits + displayMisses;
-        totalContainer.innerHTML = `<p> <b>Total Hits:</b> ${displayHits} <br><b>Total Misses:</b> ${displayMisses} <br><b>Total streams:</b> ${totalStreams}</p>`;
+        totalContainer.innerHTML = `<p> <b>Total Hits:</b> ${displayHits} <br><b>Total Misses:</b> ${displayMisses} <br><b>Total Streams:</b> ${totalStreams}</p>`;
         await sleep(50);
     }
 }
