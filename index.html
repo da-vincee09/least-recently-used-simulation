@@ -1,0 +1,112 @@
+<!---
+    LRU Page Replacement Simulator
+    
+    Purpose:
+        - Visualize the Least Recently Used (LRU) page replacement algorithm step by step.
+        - Shows memory pages in frames, highlighting hits and misses.
+        - Displays total hits, misses, and streams.
+
+    Author: GROUP 2 - BSCS3A
+    Date: 2025
+    Version: 1.0
+
+    Usage:
+        - Enter a reference string (numbers or letters) separated by spaces or commas.
+        - Set the number of memory pages (frames).
+        - Click "Simulate LRU" to see the page replacement animation.
+
+    Notes:
+        - Hits are displayed in green, misses in red.
+        - Total counters update at the bottom after the simulation.
+        - Works with both numeric and alphabetic references.
+        - Designed for educational purposes only.
+
+    Files:
+        - HTML: index.html
+        - CSS: styles.css
+        - JS: lru.js
+--->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Least Recently Used Algorithm</title>
+    <link rel="icon" type="img/jpg" href="assets/lru_icon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body >
+    <!-- Header Section -->
+    <header>
+        <h1>LRU Page Replacement Simulator</h1>
+        <p>Visualize memory management step by step using the Least Recently Used algorithm.</p>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="wrapper" >
+
+        <!-- Introduction Section -->
+        <div class="introContainer">
+            <p> See how memory pages are replaced using the Least Recently Used (LRU) algorithm. Enter a reference string and frames to watch hits, misses, and replacements step by step.</p> 
+        </div>
+
+        <!-- Input and Info Section -->
+        <div class="inputContainer">
+
+            <!-- Input Column -->
+            <div class="inputsColumn">
+                <input type="text" id="references" placeholder="ex. 7 0 1 2 0 3 0 4 2 3">
+                <input type="number" id="frames" placeholder="Number of Memory Page" min="1">
+                <button id="simulateBtn">Simulate LRU</button>
+            </div>
+
+            <!-- Info Column -->    
+            <div class="infoColumn">
+                <h3>Important Info</h3>
+                <ul>
+                    <li>Enter your reference string separated by <b>spaces</b> or <b>commas</b> (e.g., 7 0 1 2 or A,B,C).</li>
+                    <li>Memory page determine the memory capacity. More pages = fewer page replacements.</li>
+                    <li>Simulation shows <span style="color:green;font-weight:bold;">Hit</span> and <span style="color:red;font-weight:bold;">Miss</span> visually for each reference.</li>
+                    <li>Total hits and misses are displayed at the bottom after simulation.</li>
+                    <li>You can mix letters and numbers in your reference string.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Simulation Area -->
+        <div id="simulationArea"  class="columns"></div>
+
+        <!-- Total Counter Display -->
+        <div id="totalCounterContainer">
+            <p> 
+                <b>Total Hits:</b> 0 <br> 
+                <b>Total Misses:</b> 0 <br>
+                <b>Total Streams:</b> 0 
+            </p>
+        </div>
+
+        <!-- Popup Notification -->
+        <div id="cutePopup" class="popup">
+            <div class="popupContent">
+                <h2>✨ Notice!</h2>
+                <p id="popupMessage">This is a popup message!</p>
+
+                <button id="closePopupBtn">Okay!</button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 GROUP 2 - BSCS3A | LRU Simulator Project</p>
+        <p>Created for educational purposes to visualize page replacement algorithms.</p>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="lru.js"></script>
+
+</body>
+</html>
